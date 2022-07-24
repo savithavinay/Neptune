@@ -82,6 +82,12 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.35.Final</version>
         </dependency>
+             
+          <!-- necessary to be on the class path for ProfileCredentialsProvider -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sts</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
