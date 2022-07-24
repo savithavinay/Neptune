@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 public class NeptuneConnect {
 
-    public void init(){
+  /*  public void init(){
 
         System.out.println("*****");
 
@@ -34,10 +34,11 @@ public class NeptuneConnect {
         Client client = cluster.connect();
         System.out.println(client.submit("g.V().has('code','IAD')").all());
     }
+    */
 
 
 
-   /* public void init(){
+   public void init(){
 
         System.out.println("*****");
 
@@ -48,5 +49,5 @@ public class NeptuneConnect {
                 .create();
         Client client = cluster.connect();
         System.out.println(client.submit("g.V().has('code','IAD')").all());
-    }*/
+    }
 }
