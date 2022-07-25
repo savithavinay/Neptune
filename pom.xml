@@ -79,18 +79,18 @@
 
         <!-- necessary to be on the class path for ProfileCredentialsProvider -->
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sts -->
-        <dependency>
+       <!-- <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>sts</artifactId>
             <version>2.10.56</version>
-        </dependency>
+        </dependency> -->
              
          <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
             <version>1.11.1009</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 
