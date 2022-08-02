@@ -45,6 +45,11 @@ public class NeptuneConnect {
         Cluster cluster = Cluster.build("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com")
                 .port(8182)
                 .enableSsl(true)
+                .maxConnectionPoolSize(4)
+                .minConnectionPoolSize(4)
+                .maxSimultaneousUsagePerConnection(8)
+                //.maxInProcessPerConnection(maxInProcessPerConnection)
+                .maxWaitForConnection(10000)
                 .channelizer(SigV4WebSocketChannelizer.class)
                 .create();
         Client client = cluster.connect();
