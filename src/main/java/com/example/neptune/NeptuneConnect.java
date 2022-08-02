@@ -41,7 +41,7 @@ public class NeptuneConnect {
 
         Cluster cluster = Cluster.build("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com")
                 .port(8182)
-                .enableSsl(false)
+                .enableSsl(true)
                 .maxConnectionPoolSize(4)
                 .minConnectionPoolSize(4)
                 .maxSimultaneousUsagePerConnection(8)
