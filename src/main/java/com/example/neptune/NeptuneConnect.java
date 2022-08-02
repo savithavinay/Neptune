@@ -32,7 +32,7 @@ public class NeptuneConnect {
                         }
                 ).create();
         Client client = cluster.connect();
-        System.out.println(client.submit("g.V().has('code','IAD')").all());
+        System.out.println("Output -----> "+client.submit("g.V().has('code','IAD')").all());
     }
     */
 
