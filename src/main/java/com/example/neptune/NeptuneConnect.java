@@ -50,11 +50,11 @@ public class NeptuneConnect {
                 .channelizer(SigV4WebSocketChannelizer.class)
                 .create();
        // Client client = cluster.connect();
-        //System.out.println("Output -----> "+client.submit("g.V().has('code','IAD')").all());
+        System.out.println("Output -----> "+client.submit("g.V().count()"));
 
 
            //final Cluster cluster = builder.create();
-           try {
+           /**try {
                final Client client = cluster.connect();
                final ResultSet rs = client.submit("g.V().count()");
 
@@ -63,6 +63,6 @@ public class NeptuneConnect {
                }
            } finally {
                cluster.close();
-           }
+           }**/
     }
 }
