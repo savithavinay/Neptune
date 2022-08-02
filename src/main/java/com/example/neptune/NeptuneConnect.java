@@ -49,7 +49,7 @@ public class NeptuneConnect {
                 .maxWaitForConnection(10000)
                 .channelizer(SigV4WebSocketChannelizer.class)
                 .create();
-       // Client client = cluster.connect();
+        Client client = cluster.connect();
         System.out.println("Output -----> "+client.submit("g.V().count()"));
 
 
