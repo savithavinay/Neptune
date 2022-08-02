@@ -1,13 +1,10 @@
 package com.example.neptune;
 
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-import com.amazonaws.neptune.auth.NeptuneNettyHttpSigV4Signer;
-import com.amazonaws.neptune.auth.NeptuneSigV4SignerException;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
+import org.apache.tinkerpop.gremlin.driver.Result;
+import org.apache.tinkerpop.gremlin.driver.ResultSet;
 import org.apache.tinkerpop.gremlin.driver.SigV4WebSocketChannelizer;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 public class NeptuneConnect {
 
@@ -32,7 +29,7 @@ public class NeptuneConnect {
                         }
                 ).create();
         Client client = cluster.connect();
-        System.out.println("Output -----> "+client.submit("g.V().has('code','IAD')").all());
+        System.out.println(client.submit("g.V().has('code','IAD')").all());
     }
     */
 
@@ -44,7 +41,7 @@ public class NeptuneConnect {
 
         Cluster cluster = Cluster.build("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com")
                 .port(8182)
-                .enableSsl(true)
+                .enableSsl(false)
                 .maxConnectionPoolSize(4)
                 .minConnectionPoolSize(4)
                 .maxSimultaneousUsagePerConnection(8)
@@ -52,7 +49,20 @@ public class NeptuneConnect {
                 .maxWaitForConnection(10000)
                 .channelizer(SigV4WebSocketChannelizer.class)
                 .create();
-        Client client = cluster.connect();
-        System.out.println(client.submit("g.V().has('code','IAD')").all());
+       // Client client = cluster.connect();
+        //System.out.println("Output -----> "+client.submit("g.V().has('code','IAD')").all());
+
+
+           //final Cluster cluster = builder.create();
+           try {
+               final Client client = cluster.connect();
+               final ResultSet rs = client.submit("g.V().count()");
+
+               for (Result r : rs) {
+                   System.out.println("output -->"+r);
+               }
+           } finally {
+               cluster.close();
+           }
     }
 }
