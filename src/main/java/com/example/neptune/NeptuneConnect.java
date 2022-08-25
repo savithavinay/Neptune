@@ -4,11 +4,10 @@ import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.Result;
 import org.apache.tinkerpop.gremlin.driver.ResultSet;
-import org.apache.tinkerpop.gremlin.driver.SigV4WebSocketChannelizer;
 
 public class NeptuneConnect {
 
-  /*  public void init(){
+   public void init(){
 
         System.out.println("*****");
 
@@ -31,11 +30,10 @@ public class NeptuneConnect {
         Client client = cluster.connect();
         System.out.println(client.submit("g.V().has('code','IAD')").all());
     }
-    */
 
 
 
-   public void init(){
+ /*  public void init(){
 
         System.out.println("*****");
 
@@ -64,5 +62,5 @@ public class NeptuneConnect {
            } finally {
                cluster.close();
            }**/
-    }
+    }*/
 }
