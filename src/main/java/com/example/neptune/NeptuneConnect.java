@@ -4,6 +4,8 @@ import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.Result;
 import org.apache.tinkerpop.gremlin.driver.ResultSet;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.neptune.auth.NeptuneNettyHttpSigV4Signer;
 
 public class NeptuneConnect {
 
