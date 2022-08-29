@@ -45,7 +45,7 @@
             <version>3.5.2</version>
         </dependency>
 
-        <dependency>
+        <!-- <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>amazon-neptune-sigv4-signer</artifactId>
             <version>3.5.2</version>
@@ -55,7 +55,7 @@
             <groupId>com.amazonaws</groupId>
             <artifactId>amazon-neptune-gremlin-java-sigv4</artifactId>
             <version>3.5.2</version>
-        </dependency>
+        </dependency> -->
 
        <!-- <dependency>
             <groupId>com.amazonaws</groupId>
