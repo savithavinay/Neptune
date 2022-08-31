@@ -26,8 +26,8 @@ public class NeptuneConnect {
                                 sigV4Signer.signRequest(r);
                                //throw new NeptuneSigV4SignerException("test");
                             } catch (NeptuneSigV4SignerException e) {
-                                System.out.println("1111111111111");
-                                throw new RuntimeException(e);
+                                System.out.println("1111111111111111111111111111111111111111111111");
+                              //  throw new RuntimeException(e);
                                //System.out.println("1111111111111");
                             }
                             return r;
