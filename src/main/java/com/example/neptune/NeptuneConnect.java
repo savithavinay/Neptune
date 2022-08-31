@@ -14,11 +14,9 @@ public class NeptuneConnect {
 
         System.out.println("*****");
       try{
-
-        Cluster cluster = Cluster.build("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com")
-                .port(8182)
-                .enableSsl(true)
-                .handshakeInterceptor( r ->
+         Cluster.Builder builder = Cluster.build();
+                builder.addContactPoint("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com");
+                builder.handshakeInterceptor( r ->
                         {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
                             try {
@@ -27,11 +25,16 @@ public class NeptuneConnect {
                                 sigV4Signer.signRequest(r);
                             } catch (NeptuneSigV4SignerException e) {
                                 throw new RuntimeException(e);
+                               System.out.println("1111111111111");
                             }
                             return r;
                         }
-                ).create();
-        Client client = cluster.connect();
+                );
+                System.out.println("22222222222222");
+                builder.port(8182);
+                builder.enableSsl(true);
+         
+        Client client = builder.create().connect();
         System.out.println(client.submit("g.V().has('code','IAD')").all());
       }
       catch(Exception e){
