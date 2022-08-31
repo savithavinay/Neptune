@@ -24,6 +24,7 @@ public class NeptuneConnect {
                                         new DefaultAWSCredentialsProviderChain());
                                 sigV4Signer.signRequest(r);
                             } catch (NeptuneSigV4SignerException e) {
+                                System.out.println("1111111111111");
                                 throw new RuntimeException(e);
                                //System.out.println("1111111111111");
                             }
