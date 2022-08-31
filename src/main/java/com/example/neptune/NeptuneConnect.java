@@ -20,10 +20,10 @@ public class NeptuneConnect {
                         {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
                             try {
-                                sigV4Signer = new NeptuneNettyHttpSigV4Signer("ap-southeas",
+                                sigV4Signer = new NeptuneNettyHttpSigV4Signer(null,
                                         new DefaultAWSCredentialsProviderChain());
                                 sigV4Signer.signRequest(r);
-                               throw new NeptuneSigV4SignerException("test");
+                               //throw new NeptuneSigV4SignerException("test");
                             } catch (NeptuneSigV4SignerException e) {
                                 System.out.println("1111111111111");
                                 //throw new RuntimeException(e);
