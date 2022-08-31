@@ -34,9 +34,11 @@ public class NeptuneConnect {
                 );
                 System.out.println("22222222222222");
                 builder.port(8182);
+                System.out.println("33333333333333");
                 builder.enableSsl(true);
          
         Client client = builder.create().connect();
+          System.out.println("444444444444444");
         System.out.println(client.submit("g.V().has('code','IAD')").all());
       }
       catch(Exception e){
