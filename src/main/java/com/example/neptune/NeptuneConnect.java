@@ -13,6 +13,7 @@ public class NeptuneConnect {
    public void init(){
 
         System.out.println("*****");
+      try{
 
         Cluster cluster = Cluster.build("demo.cluster-custom-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com")
                 .port(8182)
@@ -25,13 +26,17 @@ public class NeptuneConnect {
                                         new DefaultAWSCredentialsProviderChain());
                                 sigV4Signer.signRequest(r);
                             } catch (NeptuneSigV4SignerException e) {
-                                e.printStackTrace();
+                                throw new RuntimeException(e);
                             }
                             return r;
                         }
                 ).create();
         Client client = cluster.connect();
         System.out.println(client.submit("g.V().has('code','IAD')").all());
+      }
+      catch(Exception e){
+         System.out.println("Errorrrrrrrr"+e);
+      }
     }
 
 
