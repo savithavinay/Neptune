@@ -51,11 +51,11 @@
             <version>2.4.0</version>
         </dependency>
 
-         <!-- <dependency>
+         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>amazon-neptune-gremlin-java-sigv4</artifactId>
-            <version>3.5.2</version>
-        </dependency> -->
+            <version>2.4.0</version>
+        </dependency>
 
        <!-- <dependency>
             <groupId>com.amazonaws</groupId>
