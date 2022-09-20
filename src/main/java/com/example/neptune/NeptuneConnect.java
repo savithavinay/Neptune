@@ -41,6 +41,7 @@ public class NeptuneConnect {
         Client client = builder.create().connect();
           System.out.println("444444444444444");
         System.out.println(client.submit("g.V().has('code','IAD')").all());
+         System.out.println("Output -----> "+client.submit("g.V().count()"));
       }
       catch(Exception e){
          System.out.println("Errorrrrrrrr"+e);
