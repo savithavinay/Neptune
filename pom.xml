@@ -51,11 +51,11 @@
             <version>2.4.0</version>
         </dependency>
 
-        <!-- <dependency>
+       <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>amazon-neptune-gremlin-java-sigv4</artifactId>
             <version>2.4.0</version>
-        </dependency> -->
+        </dependency>
 
        <!-- <dependency>
             <groupId>com.amazonaws</groupId>
@@ -112,11 +112,11 @@
         </dependency> -->
 
          <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts -->
-        <!--<dependency>
+        <dependency>
             <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-sts</artifactId>
+            <artifactId>aws-java-sdk-core</artifactId>
             <version>1.11.1009</version>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
 
