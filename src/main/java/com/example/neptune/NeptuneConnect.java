@@ -42,6 +42,26 @@ public class NeptuneConnect {
           System.out.println("444444444444444");
         System.out.println(client.submit("g.V().has('code','IAD')").all());
          System.out.println("Output -----> "+client.submit("g.V().count()"));
+         GraphTraversalSource g = traversal().withRemote(DriverRemoteConnection.using(cluster));
+
+        // Add a vertex.
+        // Note that a Gremlin terminal step, e.g. iterate(), is required to make a request to the remote server.
+        // The full list of Gremlin terminal steps is at https://tinkerpop.apache.org/docs/current/reference/#terminal-steps
+        g.addV("Person").property("Name", "Justin").iterate();
+
+        // Add a vertex with a user-supplied ID.
+        g.addV("Custom Label").property(T.id, "CustomId1").property("name", "Custom id vertex 1").iterate();
+        g.addV("Custom Label").property(T.id, "CustomId2").property("name", "Custom id vertex 2").iterate();
+
+        g.addE("Edge Label").from(__.V("CustomId1")).to(__.V("CustomId2")).iterate();
+
+        // This gets the vertices, only.
+        GraphTraversal t = g.V().limit(3).elementMap();
+
+        t.forEachRemaining(
+            e ->  System.out.println(t.toList())
+        );
+         cluster.close();
       }
       catch(Exception e){
          System.out.println("Errorrrrrrrr"+e);
