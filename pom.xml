@@ -85,11 +85,15 @@
             <artifactId>amazon-neptune-sigv4-signer</artifactId>
             <version>2.4.0</version>
         </dependency>
-
-       <dependency>
+        <dependency>
             <groupId>com.amazonaws</groupId>
-            <artifactId>amazon-neptune-gremlin-java-sigv4</artifactId>
-            <version>2.4.0</version>
+            <artifactId>aws-java-sdk-core</artifactId>
+            <version>1.11.307</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-neptune</artifactId>
+            <version>1.11.307</version>
         </dependency>
 
        
