@@ -1,5 +1,6 @@
 package com.example.neptune;
 
+import com.amazonaws.neptune.auth.NeptuneSigV4SignerException;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.Result;
