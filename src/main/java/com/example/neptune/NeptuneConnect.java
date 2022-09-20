@@ -22,8 +22,8 @@ public class NeptuneConnect {
       try{
          Cluster.Builder builder = Cluster.build();
                 builder.addContactPoint("demo1.cluster-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com");
-                builder.handshakeInterceptor(HandshakeInterceptor.NO_OP);
-              /*  builder.handshakeInterceptor( r ->
+                //builder.handshakeInterceptor(HandshakeInterceptor.NO_OP);
+                builder.handshakeInterceptor( r ->
                         {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
                             try {
@@ -39,7 +39,7 @@ public class NeptuneConnect {
                             }
                             return r;
                         }
-                );**/
+                );
                 System.out.println("22222222222222");
                 builder.port(8182);
                 System.out.println("33333333333333");
