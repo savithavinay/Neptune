@@ -60,7 +60,7 @@ public class NeptuneConnect {
         g.addV("Custom Label").property(T.id, "CustomId1").property("name", "Custom id vertex 1").iterate();
         g.addV("Custom Label").property(T.id, "CustomId2").property("name", "Custom id vertex 2").iterate();
 
-        g.addE("Edge Label").from(__.V("CustomId1")).to(__.V("CustomId2")).iterate();
+        //g.addE("Edge Label").from(__.V("CustomId1")).to(__.V("CustomId2")).iterate();
 
         // This gets the vertices, only.
         GraphTraversal t = g.V().limit(3).elementMap();
