@@ -53,6 +53,13 @@
              <version>4.1.72.Final</version>
          </dependency> 
 
+        <!-- https://mvnrepository.com/artifact/io.netty/netty -->
+         <dependency>
+             <groupId>io.netty</groupId>
+             <artifactId>netty</artifactId>
+             <version>3.5.8.Final</version>
+         </dependency>
+
 
         <!-- Neptune Sigv4 Signer -->
        <!-- https://mvnrepository.com/artifact/io.netty/netty -->
@@ -89,11 +96,6 @@
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-core</artifactId>
             <version>1.11.307</version>
-        </dependency>
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-neptune</artifactId>
-            <version>1.11.339</version>
         </dependency>
     </dependencies>
 
