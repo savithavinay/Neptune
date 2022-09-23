@@ -34,7 +34,7 @@ public class NeptuneConnect {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
                             try {
                                System.out.println("555555555555");
-                                sigV4Signer = new NeptuneNettyHttpSigV4Signer("ap-southeast-2",
+                                sigV4Signer = new NeptuneNettyHttpSigV4Signer("us-west-2",
                                         new DefaultAWSCredentialsProviderChain());
                                 sigV4Signer.signRequest(r);
                                //throw new NeptuneSigV4SignerException("test");
