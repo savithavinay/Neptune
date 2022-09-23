@@ -23,6 +23,12 @@ public class NeptuneConnect {
          Cluster.Builder builder = Cluster.build();
                 builder.addContactPoint("demo1.cluster-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com");
                 //builder.handshakeInterceptor(HandshakeInterceptor.NO_OP);
+                builder.maxConnectionPoolSize(4);
+                builder.minConnectionPoolSize(4);
+                builder.maxSimultaneousUsagePerConnection(8);
+                builder.maxInProcessPerConnection(8);
+                builder.maxWaitForConnection(10000);
+                builder.maxContentLength(81928192);
                 builder.handshakeInterceptor( r ->
                         {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
@@ -40,16 +46,14 @@ public class NeptuneConnect {
                             return r;
                         }
                 );
-                System.out.println("22222222222222");
                 builder.port(8182);
-                System.out.println("33333333333333");
                 builder.enableSsl(true);
          
          Cluster cluster = builder.create();
          
-        Client client = cluster.connect();
-          System.out.println("444444444444444");
-        System.out.println(client.submit("g.V().has('code','IAD')").all());
+         Client client = cluster.connect();
+         System.out.println("444444444444444");
+         System.out.println(client.submit("g.V().has('code','IAD')").all());
          System.out.println("Output -----> "+client.submit("g.V().count()"));
          GraphTraversalSource g = traversal().withRemote(DriverRemoteConnection.using(cluster));
 
