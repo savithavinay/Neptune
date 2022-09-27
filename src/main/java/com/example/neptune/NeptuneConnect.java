@@ -21,7 +21,7 @@ public class NeptuneConnect {
         System.out.println("*****");
       try{
          Cluster.Builder builder = Cluster.build();
-                builder.addContactPoint("demo1.cluster-chuoniryb3ms.ap-southeast-2.neptune.amazonaws.com");
+                builder.addContactPoint("mcs-neptune-perf-latest-engine-cluster.cluster-ro-cswfbacmucoc.us-west-2.neptune.amazonaws.com");
                 //builder.handshakeInterceptor(HandshakeInterceptor.NO_OP);
                 builder.maxConnectionPoolSize(4);
                 builder.minConnectionPoolSize(4);
