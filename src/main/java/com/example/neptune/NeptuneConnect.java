@@ -17,8 +17,6 @@ import org.apache.tinkerpop.gremlin.structure.T;
 public class NeptuneConnect {
 
    public void init(){
-
-        System.out.println("*****");
       try{
          Cluster.Builder builder = Cluster.build();
                 builder.addContactPoint("mcs-neptune-perf-latest-engine-cluster.cluster-ro-cswfbacmucoc.us-west-2.neptune.amazonaws.com");
@@ -33,13 +31,12 @@ public class NeptuneConnect {
                         {
                             NeptuneNettyHttpSigV4Signer sigV4Signer = null;
                             try {
-                               System.out.println("555555555555");
                                 sigV4Signer = new NeptuneNettyHttpSigV4Signer("us-west-2",
                                         new DefaultAWSCredentialsProviderChain());
                                 sigV4Signer.signRequest(r);
                                //throw new NeptuneSigV4SignerException("test");
                             } catch (NeptuneSigV4SignerException e) {
-                                System.out.println("1111111111111111111111111111111111111111111111");
+                                System.out.println("NeptuneSigV4SignerException");
                               //  throw new RuntimeException(e);
                                //System.out.println("1111111111111");
                             }
@@ -52,8 +49,6 @@ public class NeptuneConnect {
          Cluster cluster = builder.create();
          
          Client client = cluster.connect();
-         System.out.println("444444444444444");
-         System.out.println(client.submit("g.V().has('code','IAD')").all());
          System.out.println("Output -----> "+client.submit("g.V().count()"));
          GraphTraversalSource g = traversal().withRemote(DriverRemoteConnection.using(cluster));
 
