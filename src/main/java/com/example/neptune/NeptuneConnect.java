@@ -45,6 +45,9 @@ public class NeptuneConnect {
                 );
                 builder.port(8182);
                 builder.enableSsl(true);
+                if (certificate != null){
+                  builder.trustStore("SFSRootCAG2.pem");
+                }
          
          Cluster cluster = builder.create();
          
