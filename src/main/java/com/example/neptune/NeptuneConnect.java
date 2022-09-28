@@ -45,7 +45,7 @@ public class NeptuneConnect {
                 );
                 builder.port(8182);
                 builder.enableSsl(true);
-                builder.trustStore("");
+                //builder.trustStore("");
          
          Cluster cluster = builder.create();
          
